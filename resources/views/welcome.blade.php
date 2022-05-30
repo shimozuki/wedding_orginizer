@@ -1,3 +1,4 @@
+@include('sweetalert::alert')
 @extends('layouts.index')
 @extends('layouts.slider')
 @extends('layouts.about')
@@ -14,7 +15,7 @@
       @foreach($produk as $key => $produks)
         <div class="col-sm-6 col-xl-3">
           <div class="box">
-            <a href="">
+            <a href="{{route('welcome.show', $produks->id_paket)}}">
               <div class="img-box">
                 <img src="image/{{$produks->gambar}}" alt="">
               </div>

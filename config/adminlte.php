@@ -239,6 +239,11 @@ return [
             'url' => '/promo',
             'icon' => 'fa fa-tag',
         ],
+        [
+            'text' => 'Transaksi',
+            'url' => '/nonpromo',
+            'icon' => 'fas fa-exchange-alt'
+        ],
     ],
 
     /*

@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="{{ asset('assets/images/slider-img.png') }}" alt="">
+                    <img src="{{ asset('assets/images/banner2-.png') }}" alt="">
                   </div>
                 </div>
               </div>

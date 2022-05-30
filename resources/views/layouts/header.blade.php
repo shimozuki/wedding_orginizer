@@ -13,7 +13,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
-  <title>Home</title>
+  <title>Pesanan</title>
 
 
   <!-- bootstrap core css -->
@@ -31,36 +31,16 @@
 
 </head>
 
-<body>
-@if(session()->has('message'))
-    <div class="alert alert-success" role="alert"">
-        {{ session()->get('message') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    </div>
-@endif  
-  <div class="hero_area">
+<body class="sub_page">
 
-    <div class="hero_social">
-      <a href="">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-      </a>
-      <a href="">
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-      </a>
-      <a href="">
-        <i class="fa fa-linkedin" aria-hidden="true"></i>
-      </a>
-      <a href="">
-        <i class="fa fa-instagram" aria-hidden="true"></i>
-      </a>
-    </div>
+  <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              Wedding
+              Timups
             </span>
           </a>
 
@@ -70,19 +50,28 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="watches.html"> Watches </a>
+              </li>
               <li class="nav-item active">
-                <a class="nav-link" href="{{ url('/')}}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="about.html"> About <span class="sr-only">(current)</span> </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('produk')}}"> Paket </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about"> Tentang </a>
+                <a class="nav-link" href="contact.html">Contact Us</a>
               </li>
             </ul>
             <div class="user_option-box">
-              <a href="{{ url('/home')}}">
+              <a href="">
                 <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-search" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -90,12 +79,9 @@
       </div>
     </header>
     <!-- end header section -->
-    <!-- slider section -->
-        @yield('slider')
-    <!-- end slider section -->
-    
   </div>
-  @yield('konten')
+@yield('pesanan')
+@yield('form')
   <!-- footer section -->
   <footer class="footer_section">
     <div class="container">
@@ -197,7 +183,6 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
-
 
 </body>
 

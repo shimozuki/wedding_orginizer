@@ -7,14 +7,17 @@
 @stop
 
 @section('content')
-    <form action="{{route('promo.update', $paket)}}" method="post">
+    <form action="{{route('pakets.update', $paket)}}" method="post" enctype='multipart/form-data'>
         @method('PUT')
         @csrf
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
+                    <div class="form-group">
+                            <input type="hidden" class="form-control @error('id') is-invalid @enderror" id="exampleInputName" placeholder="Nama paket" name="id" value="{{$paket->id ?? old('id')}}">
+                            @error('id') <span class="text-danger">{{$message}}</span> @enderror
+                        </div>
                         <div class="form-group">
                             <label for="exampleInputName">Nama Paket</label>
                             <input type="text" class="form-control @error('nama_paket') is-invalid @enderror" id="exampleInputName" placeholder="Nama paket" name="nama_paket" value="{{$paket->nama_paket ?? old('nama_paket')}}">

@@ -13,9 +13,9 @@
       @foreach($paket_promo as $key => $pakets)
         <div class="col-md-6 col-xl-3">
           <div class="box">
-            <a href="">
+            <a href="{{route('welcome.show', $pakets->id)}}">
               <div class="img-box">
-                <img src="image/{{$pakets->gambar}}" alt="">
+                <img src="../image/{{$pakets->gambar}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
@@ -48,7 +48,7 @@
       @foreach($produk as $key => $produks)
         <div class="col-md-6 col-xl-3">
           <div class="box">
-            <a href="">
+          <a href="{{route('nonpromo.show', $produks)}}">
               <div class="img-box">
                 <img src="image/{{$produks->gambar}}" alt="">
               </div>
