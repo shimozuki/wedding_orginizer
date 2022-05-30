@@ -244,6 +244,11 @@ return [
             'url' => '/nonpromo',
             'icon' => 'fas fa-exchange-alt'
         ],
+        [
+            'text' => 'About',
+            'url' => 'abouts',
+            'icon' => 'fas fa-layer-group'
+        ],
     ],
 
     /*

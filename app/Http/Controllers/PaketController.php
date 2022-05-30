@@ -62,7 +62,7 @@ class PaketController extends Controller
             'nama_paket' => 'required',
             'detail' => 'required',
             'harga' => 'required',
-            'gambar' => 'required',
+            'gambar' => 'requiredrequired|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $paket = Paket::find($id);

@@ -19,11 +19,14 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/', App\Http\Controllers\ProdukController::class);
 Route::resource('welcome', App\Http\Controllers\ProdukController::class);
 Route::get('produk', 'App\Http\Controllers\ProdukController@produk');
-Route::resource('nonpromo', App\Http\Controllers\Nonpromocontroller::class);
 Route::get('status/{id}', 'App\Http\Controllers\Nonpromocontroller@tampil')->name('status');
 
 Auth::routes();
 
+Route::resource('nonpromo', App\Http\Controllers\Nonpromocontroller::class)
+    ->middleware('auth');
+Route::resource('abouts', \App\Http\Controllers\AboutController::class)
+    ->middleware('auth');
 Route::resource('users', \App\Http\Controllers\UserController::class)
     ->middleware('auth');
 Route::resource('pakets', \App\Http\Controllers\PaketController::class)

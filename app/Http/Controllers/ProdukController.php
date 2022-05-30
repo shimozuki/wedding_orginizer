@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Promo;
 use App\Models\Paket;
 use App\Models\Transaksi;
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -14,9 +15,10 @@ class ProdukController extends Controller
         $produk = Promo::join("pakets", function($join){
             $join->on("promos.id_paket", "=", "pakets.id");
         })->get();
-
+        $about = About::all()->first();
         return view('welcome', [
-            'produk' => $produk
+            'produk' => $produk,
+            'aboutes' => $about
         ]);
     }
 

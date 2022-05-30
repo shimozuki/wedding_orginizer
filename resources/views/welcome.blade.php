@@ -53,7 +53,7 @@
       <div class="row">
         <div class="col-md-6 col-lg-5 ">
           <div class="img-box">
-            <img src="{{ asset('assets/images/about-img.png') }}" alt="">
+            <img src="../assets/image/{{$aboutes->image}}" alt="">
           </div>
         </div>
         <div class="col-md-6 col-lg-7">
@@ -64,10 +64,7 @@
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+              {{$aboutes->about}}
             </p>
             <a href="">
               Read More
