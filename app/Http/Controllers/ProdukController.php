@@ -6,6 +6,7 @@ use App\Models\Promo;
 use App\Models\Paket;
 use App\Models\Transaksi;
 use App\Models\About;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -16,9 +17,11 @@ class ProdukController extends Controller
             $join->on("promos.id_paket", "=", "pakets.id");
         })->get();
         $about = About::all()->first();
+        $banner = Banner::all();
         return view('welcome', [
             'produk' => $produk,
-            'aboutes' => $about
+            'aboutes' => $about,
+            'banner' => $banner
         ]);
     }
 
@@ -31,9 +34,13 @@ class ProdukController extends Controller
         $id = Promo::select('id_paket')->pluck('id_paket');
 
         $produkt = Paket::select('*')->whereNotIn('id', $id)->get();
+        $baner = Banner::all();
+        $about = About::all()->first();
         return view('bahan.index', [
             'paket_promo' => $produk,
-            'produk' => $produkt
+            'produk' => $produkt,
+            'banner' => $baner,
+            'aboutes' => $about
 
         ]);
     }

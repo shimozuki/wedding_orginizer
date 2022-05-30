@@ -15,39 +15,6 @@ class AboutController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        return view('about.create');
-    }
-
-    public function store(Request $request)
-    {
-        $request->validate([
-            'about' => 'required',
-            'facebook' => 'required',
-            'instagram' => 'required',
-            'whatsapp' => 'required',
-            'email' => 'required',
-            'tiktok' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-        $data = new About();
-        $data->about = $request->about;
-        $data->facebook = $request->facebook;
-        $data->instagram = $request->instagram;
-        $data->whatsapp = $request->whatsapp;
-        $data->email = $request->email;
-        $data->tiktok = $request->tiktok;
-        if ($image = $request->file('image')) {
-            $destinationPath = 'assets/image/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $data['image'] = "$profileImage";
-        }
-        $data->save();
-        return redirect()->route('abouts.index')
-                ->with('success_message', 'Berhasil menambah About baru');
-    }
 
     public function edit($id)
     {

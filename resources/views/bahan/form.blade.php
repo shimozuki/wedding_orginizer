@@ -28,12 +28,12 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName">Alamat</label>
-                            <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="exampleInputalamat" placeholder="Nama Paket" name="alamat" value="{{old('alamat')}}">
+                            <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="exampleInputalamat" placeholder="Alamat" name="alamat" value="{{old('alamat')}}">
                             @error('alamat') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName">Tanggal Acara</label>
-                            <input type="date" class="form-control @error('tanggal_layanan') is-invalid @enderror" id="exampleInputtanggal_layanan" placeholder="Nama Paket" name="tanggal_layanan" value="{{old('tanggal_layanan')}}">
+                            <input type="date" class="form-control @error('tanggal_layanan') is-invalid @enderror" id="exampleInputtanggal_layanan" placeholder="Alamat" name="tanggal_layanan" value="{{old('tanggal_layanan')}}">
                             @error('tanggal_layanan') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group">

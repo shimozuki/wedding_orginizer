@@ -1,7 +1,6 @@
 @include('sweetalert::alert')
 @extends('layouts.index')
 @extends('layouts.slider')
-@extends('layouts.about')
 @section('konten')
 <!-- shop section -->
 <section class="shop_section layout_padding">
@@ -66,9 +65,7 @@
             <p>
               {{$aboutes->about}}
             </p>
-            <a href="">
-              Read More
-            </a>
+
           </div>
         </div>
       </div>

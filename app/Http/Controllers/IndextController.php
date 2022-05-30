@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 class IndextController extends Controller
@@ -14,4 +15,12 @@ class IndextController extends Controller
             'aboutes' => $about
         ]);
     }
+    public function show()
+    {
+        $banner = Banner::all();
+        return view('layouts.slider', [
+            'banner' => $banner
+        ]);
+    }
+   
 }

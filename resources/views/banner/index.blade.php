@@ -12,36 +12,32 @@
             <div class="card">
                 <div class="card-body">
 
+                    <a href="{{route('banners.create')}}" class="btn btn-primary mb-2">
+                        Tambah
+                    </a>
+
                     <table class="table table-hover table-bordered table-stripped" id="example2">
                         <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Facebook</th>
-                            <th>Instagram</th>
-                            <th>WhatsApp</th>
-                            <th>Email</th>
-                            <th>Tiktok</th>
-                            <th>Tentang</th>
-                            <th>gambar</th>
+                            <th>Judul</th>
+                            <th>Deskripsi</th>
+                            <th>Gambar</th>
                             <th>Opsi</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($about as $key => $aboutes)
+                        @foreach($banner as $key => $banners)
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$aboutes->facebook}}</td>
-                                <td>{{$aboutes->instagram}}</td>
-                                <td>{{$aboutes->whatsapp}}</td>
-                                <td>{{$aboutes->email}}</td>
-                                <td >{{$aboutes->tiktok}}</td>
-                                <td>{{Str::substr($aboutes->about, 0,60, $end='.......')}}</td>
-                                <td><img src="assets/image/{{$aboutes->image}}"  width="100px"></td>
+                                <td>{{$banners->judul}}</td>
+                                <td>{{$banners->deskripsi}}</td>
+                                <td><img src="assets/image/{{$banners->gambar}}"  width="100px"></td>
                                 <td>
-                                    <a href="{{route('abouts.edit', $aboutes)}}" class="btn btn-primary btn-xs">
+                                    <a href="{{route('banners.edit', $banners)}}" class="btn btn-primary btn-xs">
                                         Edit
                                     </a>
-                                    <a href="{{route('abouts.destroy', $aboutes)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
+                                    <a href="{{route('banners.destroy', $banners)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
                                         Delete
                                     </a>
                                 </td>

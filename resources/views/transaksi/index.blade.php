@@ -41,7 +41,7 @@
                                     <a href="{{url('status/'.$transaksis->id)}}" class="btn btn-primary btn-xs">
                                         Edit
                                     </a>
-                                    <a href="" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
+                                    <a href="https://api.whatsapp.com/send?phone={{$transaksis->no_tlpn}}&text=Hallo,%20Admin%20mau%20menginformasikan%20pesanan%20anda%20telah%20di%20{{$transaksis->keterangan}},%20untuk%20informasi%20pesanan%20anda%20Paket:%20{{$transaksis->nama_paket}},%20Total%20Pembayaran%20{{$transaksis->total_harga}}" class="btn btn-success btn-xs">
                                         Delete
                                     </a>
                                 </td>

@@ -18,7 +18,7 @@ class CreateAboutsTable extends Migration
             $table->text('about');
             $table->string('facebook');
             $table->string('instagram');
-            $table->integer('whatsapp');
+            $table->string('whatsapp');
             $table->string('email');
             $table->string('tiktok');
             $table->string('image');
