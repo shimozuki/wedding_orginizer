@@ -16,6 +16,7 @@ class PromoController extends Controller
                 ->join("pakets", function($join){
                 $join->on("promos.id_paket", "=", "pakets.id");
         })->get();
+        
         return view('promo.index', [
             'promo' => $promo
         ]);

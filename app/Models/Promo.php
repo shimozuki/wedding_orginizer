@@ -13,6 +13,7 @@ class Promo extends Model
         'startdate',
         'end_date',
         'diskon',
+        'status',
         'min_belanja',
     ];
 

@@ -35,7 +35,11 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$promos->kode_promo}}</td>
                                 <td>{{$promos->startdate}}</td>
-                                <td>{{$promos->end_date }}</td>
+                                @if(date("Y-m-d") >= $promos->end_date)  
+                                <td class="text-danger"><b>Berakhir</b></td>
+                                @else
+                                <td>{{$promos->end_date}}</td>
+                                @endif
                                 <td>{{$promos->diskon}}</td>
                                 <td>{{$promos->min_belanja}}</td>
                                 <td>{{$promos->nama_paket}}</td>
