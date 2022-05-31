@@ -240,7 +240,7 @@ return [
         ],
         [
             'text' => 'Transaksi',
-            'url' => '/nonpromo',
+            'url' => '/transaksi',
             'icon' => 'fas fa-exchange-alt'
         ],
         [

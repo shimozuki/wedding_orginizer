@@ -21,12 +21,13 @@ Route::resource('welcome', App\Http\Controllers\ProdukController::class);
 Route::get('produk', 'App\Http\Controllers\ProdukController@produk');
 Route::get('status/{id}', 'App\Http\Controllers\Nonpromocontroller@tampil')->name('status');
 Route::get('indext', 'App\Http\Controllers\IndextController@show')->name('slider');
+Route::resource('nonpromo', App\Http\Controllers\Nonpromocontroller::class);
 
 Auth::routes();
 
 Route::resource('banners', App\Http\Controllers\bannerController::class)
     ->middleware('auth');
-Route::resource('nonpromo', App\Http\Controllers\Nonpromocontroller::class)
+Route::resource('transaksi', App\Http\Controllers\Nonpromocontroller::class)
     ->middleware('auth');
 Route::resource('abouts', \App\Http\Controllers\AboutController::class)
     ->middleware('auth');

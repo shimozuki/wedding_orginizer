@@ -22,5 +22,10 @@ class IndextController extends Controller
             'banner' => $banner
         ]);
     }
+
+    public function tampil()
+    {
+       
+    }
    
 }

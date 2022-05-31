@@ -13,21 +13,21 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
-  <title>Pesanan</title>
+  <title>Home</title>
 
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('../assets/css/bootstrap.css') }}" />
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- font awesome style -->
-  <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet" />
-
+  <!-- <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
   <!-- Custom styles for this template -->
-  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
+  <link href="{{ asset('../assets/css/style.css') }}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet" />
+  <link href="{{ asset('../assets/css/responsive.css') }}" rel="stylesheet" />
 
 </head>
 
@@ -40,7 +40,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              Wedding
+              Timups
             </span>
           </a>
 
@@ -50,19 +50,28 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="watches.html"> Watches </a>
+              </li>
               <li class="nav-item active">
-                <a class="nav-link" href="{{ url('/')}}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="about.html"> About <span class="sr-only">(current)</span> </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('produk')}}"> Paket </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about"> Tentang </a>
+                <a class="nav-link" href="contact.html">Contact Us</a>
               </li>
             </ul>
             <div class="user_option-box">
-              <a href="{{ url('/home')}}">
+              <a href="">
                 <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-search" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -71,10 +80,13 @@
     </header>
     <!-- end header section -->
   </div>
-@yield('pesanan')
-@yield('form')
-  <!-- footer section -->
-  <footer class="footer_section">
+
+  <!-- about section -->
+  @yield('pesanan')
+  @yield('form')
+
+   <!-- footer section -->
+   <footer class="footer_section">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-lg-3 footer-col">
@@ -83,20 +95,20 @@
               About
             </h4>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+             {{Str::substr($aboutes->about, 0,87, $end='.......')}}
             </p>
             <div class="footer_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
+              <a href="https://www.facebook.com/{{$aboutes->facebook}}">
+                <i class="fab fa-facebook" aria-hidden="true"></i>
               </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
+              <a href="https://api.whatsapp.com/send?phone={{$aboutes->whatsapp}}&text=Halo%20mau%20menanyakan%20sesuatu">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
               </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              <a href="https://www.instagram.com/{{$aboutes->instagram}}/">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
               </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
+              <a href="https://www.tiktok.com/{{$aboutes->tiktok}}/?lang=en">
+              <i class="fab fa-tiktok" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -107,22 +119,22 @@
               Reach at..
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <a href="#">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                  Jakarta, Indonesia
                 </span>
               </a>
-              <a href="">
+              <a href="#">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                    {{$aboutes->whatsapp}}
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  {{$aboutes->email}}
                 </span>
               </a>
             </div>
@@ -160,17 +172,17 @@
   <!-- footer section -->
 
   <!-- jQery -->
-  <script src="{{ asset('assets/js/jquery-3.4.1.min.js') }}"></script>
+  <script src="{{ asset('../assets/js/jquery-3.4.1.min.js') }}"></script>
   <!-- popper js -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
   <!-- bootstrap js -->
-  <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
+  <script src="{{ asset('../assets/js/bootstrap.js') }}"></script>
   <!-- owl slider -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
   <!-- custom js -->
-  <script src="{{ asset('assets/js/custom.js') }}"></script>
+  <script src="{{ asset('../assets/js/custom.js') }}"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
