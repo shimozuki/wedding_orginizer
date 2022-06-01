@@ -86,7 +86,7 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Features Of Our Watches
+          Features Of Wedding Orginizer
         </h2>
         <p>
           Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -100,17 +100,11 @@
             </div>
             <div class="detail-box">
               <h5>
-                Fitness Tracking
+                Ceremony
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </div>
@@ -121,17 +115,11 @@
             </div>
             <div class="detail-box">
               <h5>
-                Alerts & Notifications
+                Perfect Cake
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </div>
@@ -142,17 +130,11 @@
             </div>
             <div class="detail-box">
               <h5>
-                Messages
+                Photography
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </div>
@@ -163,25 +145,14 @@
             </div>
             <div class="detail-box">
               <h5>
-                Bluetooth
+                Guest List
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </div>
-      </div>
-      <div class="btn-box">
-        <a href="">
-          View More
-        </a>
       </div>
     </div>
   </section>
