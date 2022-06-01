@@ -22,8 +22,8 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- font awesome style -->
-  <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet" />
-
+  <!-- <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
   <!-- Custom styles for this template -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
   <!-- responsive style -->
@@ -41,16 +41,16 @@
   <div class="hero_area">
 
     <div class="hero_social">
-      <a href="">
+    <a href="https://www.facebook.com/{{$aboutes->facebook}}">
         <i class="fa fa-facebook" aria-hidden="true"></i>
       </a>
-      <a href="">
-        <i class="fa fa-twitter" aria-hidden="true"></i>
+      <a href="https://www.tiktok.com/{{$aboutes->tiktok}}/?lang=en">
+        <i class="fab fa-tiktok" aria-hidden="true"></i>
       </a>
-      <a href="">
-        <i class="fa fa-linkedin" aria-hidden="true"></i>
+      <a href="https://api.whatsapp.com/send?phone={{$aboutes->whatsapp}}&text=Halo%20mau%20menanyakan%20sesuatu">
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
       </a>
-      <a href="">
+      <a href="https://www.instagram.com/{{$aboutes->instagram}}/">
         <i class="fa fa-instagram" aria-hidden="true"></i>
       </a>
     </div>
@@ -106,20 +106,20 @@
               About
             </h4>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+             {{Str::substr($aboutes->about, 0,87, $end='.......')}}
             </p>
             <div class="footer_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
+              <a href="https://www.facebook.com/{{$aboutes->facebook}}">
+                <i class="fab fa-facebook" aria-hidden="true"></i>
               </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
+              <a href="https://api.whatsapp.com/send?phone={{$aboutes->whatsapp}}&text=Halo%20mau%20menanyakan%20sesuatu">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
               </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              <a href="https://www.instagram.com/{{$aboutes->instagram}}/">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
               </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
+              <a href="https://www.tiktok.com/{{$aboutes->tiktok}}/?lang=en">
+              <i class="fab fa-tiktok" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -130,22 +130,22 @@
               Reach at..
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <a href="#">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                  Jakarta, Indonesia
                 </span>
               </a>
-              <a href="">
+              <a href="#">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                    {{$aboutes->whatsapp}}
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  {{$aboutes->email}}
                 </span>
               </a>
             </div>

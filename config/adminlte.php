@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>CRUD</b>Laravel',
+    'logo' => '<b>Admin</b>wo',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -190,7 +190,6 @@ return [
     'dashboard_url' => 'home',
     'logout_url' => 'logout',
     'login_url' => 'login',
-    'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
     'profile_url' => false,
@@ -241,8 +240,23 @@ return [
         ],
         [
             'text' => 'Transaksi',
-            'url' => '/nonpromo',
+            'url' => '/transaksi',
             'icon' => 'fas fa-exchange-alt'
+        ],
+        [
+            'text' => 'About',
+            'url' => 'abouts',
+            'icon' => 'fas fa-layer-group'
+        ],
+        [
+            'text' => 'Banner',
+            'url' => 'banners',
+            'icon' => 'fas fa-digital-tachograph'
+        ],
+        [
+            'text' => 'View Website',
+            'url' => '/',
+            'icon' => 'fas fa-eye'
         ],
     ],
 

@@ -1,7 +1,6 @@
 @include('sweetalert::alert')
 @extends('layouts.index')
 @extends('layouts.slider')
-@extends('layouts.about')
 @section('konten')
 <!-- shop section -->
 <section class="shop_section layout_padding">
@@ -29,11 +28,19 @@
                   </span>
                 </h6>
               </div>
+              @if(date("Y-m-d") >= $produks->end_date)  
+              <div class="new">
+                <span>
+                  Diskon 0%
+                </span>
+              </div>
+              @else
               <div class="new">
                 <span>
                   Diskon {{$produks->diskon}}%
                 </span>
               </div>
+              @endif
             </a>
           </div>
         </div>
@@ -53,7 +60,7 @@
       <div class="row">
         <div class="col-md-6 col-lg-5 ">
           <div class="img-box">
-            <img src="{{ asset('assets/images/about-img.png') }}" alt="">
+            <img src="../assets/image/{{$aboutes->image}}" alt="">
           </div>
         </div>
         <div class="col-md-6 col-lg-7">
@@ -64,14 +71,9 @@
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+              {{$aboutes->about}}
             </p>
-            <a href="">
-              Read More
-            </a>
+
           </div>
         </div>
       </div>
@@ -84,7 +86,7 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Features Of Our Watches
+          Features Of Wedding Orginizer
         </h2>
         <p>
           Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -98,17 +100,11 @@
             </div>
             <div class="detail-box">
               <h5>
-                Fitness Tracking
+                Ceremony
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </div>
@@ -119,17 +115,11 @@
             </div>
             <div class="detail-box">
               <h5>
-                Alerts & Notifications
+                Perfect Cake
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </div>
@@ -140,17 +130,11 @@
             </div>
             <div class="detail-box">
               <h5>
-                Messages
+                Photography
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </div>
@@ -161,25 +145,14 @@
             </div>
             <div class="detail-box">
               <h5>
-                Bluetooth
+                Guest List
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </div>
-      </div>
-      <div class="btn-box">
-        <a href="">
-          View More
-        </a>
       </div>
     </div>
   </section>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Promo;
 use App\Models\Paket;
 use App\Models\Transaksi;
+use App\Models\About;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -14,9 +16,12 @@ class ProdukController extends Controller
         $produk = Promo::join("pakets", function($join){
             $join->on("promos.id_paket", "=", "pakets.id");
         })->get();
-
+        $about = About::all()->first();
+        $banner = Banner::all();
         return view('welcome', [
-            'produk' => $produk
+            'produk' => $produk,
+            'aboutes' => $about,
+            'banner' => $banner
         ]);
     }
 
@@ -29,9 +34,13 @@ class ProdukController extends Controller
         $id = Promo::select('id_paket')->pluck('id_paket');
 
         $produkt = Paket::select('*')->whereNotIn('id', $id)->get();
+        $baner = Banner::all();
+        $about = About::all()->first();
         return view('bahan.index', [
             'paket_promo' => $produk,
-            'produk' => $produkt
+            'produk' => $produkt,
+            'banner' => $baner,
+            'aboutes' => $about
 
         ]);
     }
@@ -40,9 +49,10 @@ class ProdukController extends Controller
         $produk = Paket::join("promos", function($join){
             $join->on("pakets.id", "=", "promos.id_paket");
         })->where('id_paket', $id)->first();
-
+        $about = About::all()->first();
         return view('bahan.form', [
-            'paket' => $produk
+            'paket' => $produk,
+            'aboutes' => $about
         ]);
     }
 
@@ -51,9 +61,10 @@ class ProdukController extends Controller
         $produk = Paket::join("promos", function($join){
             $join->on("pakets.id", "=", "promos.id_paket");
         })->where('id_paket', $id)->first();
-
+        $about = About::all()->first();
         return view('bahan.pesanan', [
-            'paket' => $produk
+            'paket' => $produk,
+            'aboutes' => $about
         ]);
     }
 

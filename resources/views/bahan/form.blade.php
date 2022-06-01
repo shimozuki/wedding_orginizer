@@ -28,12 +28,12 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName">Alamat</label>
-                            <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="exampleInputalamat" placeholder="Nama Paket" name="alamat" value="{{old('alamat')}}">
+                            <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="exampleInputalamat" placeholder="Alamat" name="alamat" value="{{old('alamat')}}">
                             @error('alamat') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName">Tanggal Acara</label>
-                            <input type="date" class="form-control @error('tanggal_layanan') is-invalid @enderror" id="exampleInputtanggal_layanan" placeholder="Nama Paket" name="tanggal_layanan" value="{{old('tanggal_layanan')}}">
+                            <input type="date" class="form-control @error('tanggal_layanan') is-invalid @enderror" id="exampleInputtanggal_layanan" placeholder="Alamat" name="tanggal_layanan" value="{{old('tanggal_layanan')}}">
                             @error('tanggal_layanan') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group">
@@ -50,6 +50,15 @@
                             @error('status_pemesanan') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group">
+                        @if(date("Y-m-d") >= $paket->end_date)
+                        <p>
+                             <b>Harga :</b> Rp. {{$paket->harga}}
+                             <br>
+                            <b>Potongan : </b> Rp. 0
+                            <br>
+                            <b>Total Pembayaran : </b>Rp. {{$paket->harga}}
+                           </p>  
+                        @else
                            <p>
                              <b>Harga :</b> Rp. {{$paket->harga}}
                              <br>
@@ -57,6 +66,7 @@
                             <br>
                             <b>Total Pembayaran : </b>Rp. {{$paket->harga - (($paket->diskon/100) * $paket->harga)}}
                            </p>
+                           @endif
                         </div>
                         <div class="form-group">
                             <input type="hidden" class="form-control @error('total_harga') is-invalid @enderror" id="exampleInputTotal_harga" placeholder="Masukkan harga" name="total_harga" value="{{$paket->harga - (($paket->diskon/100) * $paket->harga)}}" readonly>

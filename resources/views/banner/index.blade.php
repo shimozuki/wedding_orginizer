@@ -3,7 +3,7 @@
 @section('title', 'List User')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">List Promo</h1>
+    <h1 class="m-0 text-dark">List Paket</h1>
 @stop
 
 @section('content')
@@ -12,7 +12,7 @@
             <div class="card">
                 <div class="card-body">
 
-                    <a href="{{route('promo.create')}}" class="btn btn-primary mb-2">
+                    <a href="{{route('banners.create')}}" class="btn btn-primary mb-2">
                         Tambah
                     </a>
 
@@ -20,34 +20,24 @@
                         <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Kode Promo</th>
-                            <th>Tanggal Mulai</th>
-                            <th>Tanggal Berakhir</th>
-                            <th>Diskon</th>
-                            <th>Minimal Belanja</th>
-                            <th>Nama Paket</th>
+                            <th>Judul</th>
+                            <th>Deskripsi</th>
+                            <th>Gambar</th>
                             <th>Opsi</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($promo as $key => $promos)
+                        @foreach($banner as $key => $banners)
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$promos->kode_promo}}</td>
-                                <td>{{$promos->startdate}}</td>
-                                @if(date("Y-m-d") >= $promos->end_date)  
-                                <td class="text-danger"><b>Berakhir</b></td>
-                                @else
-                                <td>{{$promos->end_date}}</td>
-                                @endif
-                                <td>{{$promos->diskon}}</td>
-                                <td>{{$promos->min_belanja}}</td>
-                                <td>{{$promos->nama_paket}}</td>
+                                <td>{{$banners->judul}}</td>
+                                <td>{{$banners->deskripsi}}</td>
+                                <td><img src="assets/image/{{$banners->gambar}}"  width="100px"></td>
                                 <td>
-                                    <a href="{{route('promo.edit', $promos->id)}}" class="btn btn-primary btn-xs">
+                                    <a href="{{route('banners.edit', $banners)}}" class="btn btn-primary btn-xs">
                                         Edit
                                     </a>
-                                    <a href="{{route('promo.destroy', $promos->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
+                                    <a href="{{route('banners.destroy', $banners)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
                                         Delete
                                     </a>
                                 </td>
