@@ -49,9 +49,10 @@ class ProdukController extends Controller
         $produk = Paket::join("promos", function($join){
             $join->on("pakets.id", "=", "promos.id_paket");
         })->where('id_paket', $id)->first();
-
+        $about = About::all()->first();
         return view('bahan.form', [
-            'paket' => $produk
+            'paket' => $produk,
+            'aboutes' => $about
         ]);
     }
 
@@ -60,9 +61,10 @@ class ProdukController extends Controller
         $produk = Paket::join("promos", function($join){
             $join->on("pakets.id", "=", "promos.id_paket");
         })->where('id_paket', $id)->first();
-
+        $about = About::all()->first();
         return view('bahan.pesanan', [
-            'paket' => $produk
+            'paket' => $produk,
+            'aboutes' => $about
         ]);
     }
 

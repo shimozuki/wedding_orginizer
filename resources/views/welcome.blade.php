@@ -28,11 +28,19 @@
                   </span>
                 </h6>
               </div>
+              @if(date("Y-m-d") >= $produks->end_date)  
+              <div class="new">
+                <span>
+                  Diskon 0%
+                </span>
+              </div>
+              @else
               <div class="new">
                 <span>
                   Diskon {{$produks->diskon}}%
                 </span>
               </div>
+              @endif
             </a>
           </div>
         </div>

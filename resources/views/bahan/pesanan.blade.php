@@ -22,9 +22,15 @@
             <p>
                 <b>Harga : Rp. {{$paket->harga}}</b>
             </p>
+            @if(date("Y-m-d") >= $paket->end_date)  
+            <p>
+                <b>Diskon : 0% <i class="fa fa-tag" aria-hidden="true"></i></b> 
+            </p>
+            @else
             <p>
                 <b>Diskon : {{$paket->diskon}}% <i class="fa fa-tag" aria-hidden="true"></i></b> 
             </p>
+            @endid
             <a href="{{route('welcome.edit', $paket->id_paket)}}" class="btn btn-primary btn-xs">
               Pesan
             </a>
