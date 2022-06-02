@@ -49,10 +49,6 @@ _Follow this steps to run the framework, install dependencies necessaries._
   $ composer install
 ```
 
-```ssh
-  $ npm install && npm run dev
-```
-
 _Generate routes to storage and profile photos._
 
 ```ssh
