@@ -55,7 +55,7 @@ class bannerController extends Controller
         $request->validate([
             'judul' => 'required',
             'deskripsi' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2097152',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2097152',
         ]);
         $data = Banner::find($id);;
         $data->judul = $request->judul;
