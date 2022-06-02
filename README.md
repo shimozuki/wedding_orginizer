@@ -36,7 +36,7 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 _To use this project you will need to clone this repository or download it to your computer. If you choose to download it directly in the upper right part of the repository you will have the option, if it is not your case you can clone it using the following command._
 
 ```ssh
-  $ git clone https://github.com/romerojoseing/laravel-jetstream.git
+  $ https://github.com/shimozuki/wedding_orginizer.git
 ```
 
 <br>
