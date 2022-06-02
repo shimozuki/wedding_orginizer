@@ -63,6 +63,12 @@ _Migrate database_
 ```ssh
   $ php artisan migrate
 ```
+_Seeds 
+```ssh
+  $ php artisan db:seed --class=About_web   
+  $ php artisan db:seed --class=status_transaksi 
+  $ php artisan db:seed
+```
 
 _Run the Project_
 ```ssh
