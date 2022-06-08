@@ -3,7 +3,7 @@
 @section('title', 'List User')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">List Paket</h1>
+    <h1 class="m-0 text-dark">List Tentang Website</h1>
 @stop
 
 @section('content')
@@ -21,6 +21,7 @@
                             <th>WhatsApp</th>
                             <th>Email</th>
                             <th>Tiktok</th>
+                            <th>Nama Website</th>
                             <th>Tentang</th>
                             <th>gambar</th>
                             <th>Opsi</th>
@@ -34,7 +35,8 @@
                                 <td>{{$aboutes->instagram}}</td>
                                 <td>{{$aboutes->whatsapp}}</td>
                                 <td>{{$aboutes->email}}</td>
-                                <td >{{$aboutes->tiktok}}</td>
+                                <td>{{$aboutes->tiktok}}</td>
+                                <td>{{$aboutes->website}}</td>
                                 <td>{{Str::substr($aboutes->about, 0,60, $end='.......')}}</td>
                                 <td><img src="assets/image/{{$aboutes->image}}"  width="100px"></td>
                                 <td>

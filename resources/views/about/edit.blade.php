@@ -44,6 +44,11 @@
                             @error('tiktok') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group">
+                            <label for="exampleInputName">Nama Website</label>
+                            <input type="text" class="form-control @error('website') is-invalid @enderror" id="exampleInputwebsite" placeholder="Nama Paket" name="website" value="{{$about->website ?? old('website')}}">
+                            @error('website') <span class="text-danger">{{$message}}</span> @enderror
+                        </div>
+                        <div class="form-group">
                             <label for="exampleInputimage"><img src="/assets/image/{{$about->image}}"  width="10%"></label>
                             <input type="file" class="form-control @error('image') is-invalid @enderror" id="exampleInputimage" placeholder="image" name="image">
                             @error('image') <span class="text-danger">{{$message}}</span> @enderror
@@ -51,6 +56,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">About</label>
                             <textarea class="form-control" id="exampleFormControlAbout" name="about" rows="3">{{$about->about}}</textarea>
+                            @error('about') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>
 

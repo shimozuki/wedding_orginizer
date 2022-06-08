@@ -24,6 +24,7 @@
                             @foreach ($status as $value)
                             <option value="{{$value->id}}" {{ old('id') == $value->id ? 'selected' : null}}>{{$value->keterangan}}</option>
                             @endforeach
+                            @error('status') <span class="text-danger">{{$message}}</span> @enderror
                         </select>
                     </div>
                     </div>

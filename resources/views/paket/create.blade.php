@@ -33,6 +33,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Detail</label>
                             <textarea class="form-control" id="exampleFormControlDetail" name="detail" rows="3"></textarea>
+                            @error('detail') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
                     </div>

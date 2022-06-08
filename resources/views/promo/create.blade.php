@@ -47,6 +47,7 @@
                             @foreach ($paket as $pakets)
                             <option value="{{$pakets->id}}" {{ old('id_paket') == $pakets->id ? 'selected' : null}}>{{$pakets->nama_paket}}</option>
                             @endforeach
+                            @error('id_paket') <span class="text-danger">{{$message}}</span> @enderror
                         </select>
                     </div>
                     </div>

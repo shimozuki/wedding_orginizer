@@ -15,7 +15,7 @@ class CreateTransaksisTable extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama', 20);
+            $table->string('nama', 255);
             $table->text('alamat');
             $table->string('no_tlpn', 20);
             $table->date('tanggal_layanan');

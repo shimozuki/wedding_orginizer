@@ -26,6 +26,7 @@
                     <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
                             <textarea class="form-control" id="exampleFormControldeskripsi" name="deskripsi" rows="3">{{$banner->deskripsi}}</textarea>
+                            @error('deskripsi') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group">
                         <label for="exampleInputimage"><img src="/assets/image/{{$banner->gambar}}"  width="10%"></label>

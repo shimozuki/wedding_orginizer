@@ -3,7 +3,7 @@
 @section('title', 'List User')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">List Paket</h1>
+    <h1 class="m-0 text-dark">List Banner</h1>
 @stop
 
 @section('content')
