@@ -35,6 +35,7 @@ class AboutController extends Controller
             'whatsapp' => 'required',
             'email' => 'required|email',
             'tiktok' => 'required',
+            'Website' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $about = About::find($id);
@@ -44,6 +45,7 @@ class AboutController extends Controller
         $about->whatsapp = $request->whatsapp;
         $about->email = $request->email;
         $about->tiktok = $request->tiktok;
+        $about->website = $request->website;
         if ($image = $request->file('image')) {
             $destinationPath = 'assets/image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
@@ -52,9 +54,14 @@ class AboutController extends Controller
         }else{
             unset($about['image']);
         }
-        $about->save();
-        return redirect()->route('abouts.index')
+        $save = $about->save();
+        if ($save != TRUE) {
+            return redirect()->route('abouts.edit')
+            ->with('error_message', 'Sorry, gagal mengubah data');
+        } else {
+            return redirect()->route('abouts.index')
             ->with('success_message', 'Berhasil mengubah tendatang Website');
+        }
 
     }
     public function destroy(Request $request, $id)

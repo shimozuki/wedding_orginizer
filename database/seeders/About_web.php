@@ -22,6 +22,7 @@ class About_web extends Seeder
                 $about->whatsapp = '087861540874';
                 $about->email = 'robbishimozuki@home.com';
                 $about->tiktok = '@mieayamthebstt';
+                $about->website = 'nabillaweddingplanner';
                 $about->image = '20220530150645.png';
         $about->save();
     }

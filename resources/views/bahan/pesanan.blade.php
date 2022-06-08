@@ -30,7 +30,7 @@
             <p>
                 <b>Diskon : {{$paket->diskon}}% <i class="fa fa-tag" aria-hidden="true"></i></b> 
             </p>
-            @endid
+            @endif
             <a href="{{route('welcome.edit', $paket->id_paket)}}" class="btn btn-primary btn-xs">
               Pesan
             </a>

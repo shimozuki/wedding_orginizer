@@ -21,6 +21,7 @@ class CreateAboutsTable extends Migration
             $table->string('whatsapp');
             $table->string('email');
             $table->string('tiktok');
+            $table->string('website', 255);
             $table->string('image');
             $table->timestamps();
         });
